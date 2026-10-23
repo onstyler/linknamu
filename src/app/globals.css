@@ -2,22 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 따뜻한 크림 → 연한 살구 그라데이션 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3a2e28;
+  --bg-from: #fffaf2;
+  --bg-via: #fff1e3;
+  --bg-to: #ffe0cc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #f3e9e1;
+    --bg-from: #1d1815;
+    --bg-via: #231b17;
+    --bg-to: #2e1f18;
   }
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(
+    165deg,
+    var(--bg-from) 0%,
+    var(--bg-via) 45%,
+    var(--bg-to) 100%
+  );
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+  word-break: keep-all;
 }
 
 @layer utilities {
